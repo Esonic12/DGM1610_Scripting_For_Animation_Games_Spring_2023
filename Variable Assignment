@@ -1,0 +1,31 @@
+using System;
+
+namespace VariableAssignment
+{
+    class Program
+    {
+        static void Main(string[] args) 
+        {
+            int numOne = 34;
+            int numTwo = 45;
+            double doubleNum = 4.76;
+            float floatNum = 7.44;
+            char letterOne = 'V';
+            char letterTwo = 'N';
+            bool trueBool = true;
+            bool falseBool = false;
+            string stringOne = "Wow! Words!";
+            string stringTwo = "More words!? Neat!"
+            Console.WriteLine(numOne);
+            Console.WriteLine(numTwo);
+            Console.WriteLine(doubleNum);
+            Console.WriteLine(floatNum);
+            Console.WriteLine(letterOne);
+            Console.WriteLine(letterTwo);
+            Console.WriteLine(trueBool);
+            Console.writeLine(falseBool);
+            console.writeline(stringOne);
+            console.writeline(stringTwo);
+        }
+    }   
+}
