@@ -1,0 +1,50 @@
+using System;
+namespace IfStatementsAssignment
+{
+    class Program
+    {
+        static voic Main(string[] args)
+        {
+            //Variables
+            int mana = 0;
+            int hp = 30;
+            bool day = true;
+            string monster = "Dragon";
+            int monsterHp = 0;
+
+            //If Statements
+            if(mana == 0)
+            {
+                console.writeLine("You're out of Mana! You can't cast spells!");
+            }
+
+            if(hp > 0)
+            {
+                console.writeLine("You have" hp "HP remaining!");
+            }
+            else
+            {
+                console.WriteLine("You are Dead!");
+            }
+
+            if(day == true)
+            {
+                console.writeLine("The sun shines above you!");
+            }
+            else
+            {
+                console.WriteLine("It is a dark night.");
+            }
+
+            if(monster == "Dragon")
+            {
+                console.writeLine("A mighty Dragon stands before you!");
+            }
+            
+            if(monsterHp == 0)
+            {
+                console.writeLine("The monster has been slain!");
+            }
+        }
+    }
+}
