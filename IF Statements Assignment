@@ -20,7 +20,7 @@ namespace IfStatementsAssignment
 
             if(hp > 0)
             {
-                console.writeLine("You have" hp "HP remaining!");
+                console.writeLine("You are alive!");
             }
             else
             {
