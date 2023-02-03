@@ -114,6 +114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickToPop: 5
   scaleToIncrease: 0.1
+  scoreManager: {fileID: 0}
+  scoreToGive: 200
 --- !u!114 &6565597094674241518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +130,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   upperBound: 10
+  scoreManager: {fileID: 0}
+  balloon: {fileID: 0}
 --- !u!1 &4375216584736901292
 GameObject:
   m_ObjectHideFlags: 0
