@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public float xRange;
     public Transform blaster;
     public GameObject laserBolt;
+    public GameObject pickupItem;
+    public int inventory = 0;
 
     // Update is called once per frame
     void Update()
@@ -38,5 +40,12 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Destroy(other.gameObject);
+    }
+
+    //Adds to the inventory count and writes it to the console
+    public void AddToInventory()
+    {
+        inventory ++;
+        Debug.Log(inventory);
     }
 }
