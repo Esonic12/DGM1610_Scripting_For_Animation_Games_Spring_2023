@@ -6,7 +6,6 @@ public class PickupSpawnManager : MonoBehaviour
 {
     public GameObject pickupPrefab;
     public float xSpawnRange;
-    public float zSpawnPos;
     public float startDelay = 0.5f;
     public float spawnInterval = 5f;
 
@@ -19,7 +18,7 @@ public class PickupSpawnManager : MonoBehaviour
     void SpawnPickup()
     {
         //Generate the spawn position on the X axis
-        Vector3 spawnPos = new Vector3(Random.Range(-xSpawnRange, xSpawnRange), 0.33f, zSpawnPos);
+        Vector3 spawnPos = new Vector3(Random.Range(-xSpawnRange, xSpawnRange), 0.33f, Random.Range(0, 15));
 
         //Spawn a Pickup item on the x axis
         Instantiate(pickupPrefab, spawnPos, pickupPrefab.transform.rotation);

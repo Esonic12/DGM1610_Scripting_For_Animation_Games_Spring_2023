@@ -153,8 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupPrefab: {fileID: 4886777264220444196, guid: 3fd639ee7afe41f468f2a4e50d1e5184, type: 3}
-  xSpawnRange: 30
-  zSpawnPos: 20
+  xSpawnRange: 17
   startDelay: 0.5
   spawnInterval: 5
 --- !u!4 &582760966
