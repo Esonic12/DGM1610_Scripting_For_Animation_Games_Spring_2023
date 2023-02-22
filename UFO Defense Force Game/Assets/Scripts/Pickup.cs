@@ -13,8 +13,10 @@ public class Pickup : MonoBehaviour
     {
         playerController = GameObject.Find("Player").GetComponent<PlayerController>();
 
+        //Get the materials
         m_Material = GetComponent<Renderer>().material;
-        print("Materials " + Resources.FindObjectsOfTypeAll(typeof(Material)).Length);
+
+        //Begin the flashing color loop
         StartCoroutine(ColorCoroutine());
     }
 
@@ -27,7 +29,6 @@ public class Pickup : MonoBehaviour
         //Destroys the pickup if it moves offscreen
         if(transform.position.z < zRange)
         {
-            print("Materials " + Resources.FindObjectsOfTypeAll(typeof(Material)).Length);
             Destroy(gameObject);
         }
     }
@@ -38,6 +39,7 @@ public class Pickup : MonoBehaviour
         playerController.AddToInventory();
     }
 
+    //Changes the pickup color to yellow, waits for 1 second, then starts the next coroutine
     public IEnumerator ColorCoroutine()
     {
         m_Material.color = Color.yellow;
@@ -45,6 +47,7 @@ public class Pickup : MonoBehaviour
         StartCoroutine(FlashingColor());
     }
 
+    //Changes the color to white, waits for 1 second, then goes back to the first coroutine
     IEnumerator FlashingColor()
     {
         m_Material.color = Color.white;
@@ -55,6 +58,5 @@ public class Pickup : MonoBehaviour
     void OnDestroy()
     {
         Destroy(m_Material);
-        print("Materials " + Resources.FindObjectsOfTypeAll(typeof(Material)).Length);
     }
 }

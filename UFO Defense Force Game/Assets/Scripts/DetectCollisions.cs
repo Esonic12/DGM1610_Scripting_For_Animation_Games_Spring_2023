@@ -5,14 +5,14 @@ using UnityEngine;
 public class DetectCollisions : MonoBehaviour
 {
 
-   // private ScoreManager scoreManager;
+    //private ScoreManager scoreManager;
     public int scoreToGive;
    // public ParticleSystem explosionParticle;
 
     // Start is called before the first frame update
     void Start()
     {
-       // scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();    
+        //scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();    
     }
 
     void OnTriggerEnter(Collider other)
@@ -23,7 +23,7 @@ public class DetectCollisions : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-       // Explosion();
+        //Explosion();
         //scoreManager.IncreaseScore(scoreToGive);
     }
 
