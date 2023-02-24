@@ -6,10 +6,13 @@ public class DestroyOutOfBounds : MonoBehaviour
 {
     public float topBounds = 30.0f;
     public float lowerBounds = -10.0f;
+    public ScoreManager scoreManager;
+    private DetectCollisions detectCollisions;
 
-    void Awake()
+    void Start()
     {
-        //Time.timeScale = 1;
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        detectCollisions = GetComponent<DetectCollisions>();
     }
 
     // Update is called once per frame
@@ -21,9 +24,8 @@ public class DestroyOutOfBounds : MonoBehaviour
         }
         else if(transform.position.z < lowerBounds)
         {
-            Debug.Log("Game Over!");
+            scoreManager.DecreaseScore(detectCollisions.scoreToGive);
             Destroy(gameObject);
-            //Time.timeScale = 0;
         }
     }
 }
