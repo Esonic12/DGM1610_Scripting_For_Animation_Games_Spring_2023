@@ -846,7 +846,7 @@ MonoBehaviour:
   - {fileID: 6220477626707017697, guid: 42ffcfdc77d66084793909ce233b7b7d, type: 3}
   - {fileID: 5812025555890592931, guid: c633f687e26d1974081125b9cda7bbec, type: 3}
   spawnRangeX: 17
-  spawnPosZ: 30
+  spawnPosZ: 20
 --- !u!1 &2144756848
 GameObject:
   m_ObjectHideFlags: 0
