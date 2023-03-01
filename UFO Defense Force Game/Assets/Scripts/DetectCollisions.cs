@@ -7,7 +7,7 @@ public class DetectCollisions : MonoBehaviour
 
     private ScoreManager scoreManager;
     public int scoreToGive;
-   // public ParticleSystem explosionParticle;
+    public ParticleSystem explosionParticle;
 
     // Start is called before the first frame update
     void Start()
@@ -21,14 +21,14 @@ public class DetectCollisions : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(other.gameObject);
+            Explosion();
         }
-
-        //Explosion();
+        
         scoreManager.IncreaseScore(scoreToGive);
     }
 
-   /* void Explosion()
+    void Explosion()
     {
         Instantiate(explosionParticle, transform.position, transform.rotation);
-    } */
+    } 
 }
