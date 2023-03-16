@@ -48,15 +48,14 @@ public class PlayerController2D : MonoBehaviour
         {
             FlipPlayer();
         }
-
     }
 
     void FlipPlayer()
     {
         isFacingRight = !isFacingRight;
-        Vector3 scaler = transform.localscale; //Local variable that stores localscale value
+        Vector3 scaler = transform.localScale; //Local variable that stores localscale value
         scaler.x *= -1; //Flip the sprite graphic
-        transform.localscale = scaler;
+        transform.localScale = scaler;
     }
 
     void Update()
