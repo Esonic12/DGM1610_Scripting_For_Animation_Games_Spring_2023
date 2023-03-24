@@ -13,7 +13,7 @@ public class PlayerController2D : MonoBehaviour
     // Player Rigidbody
     [Header("Rigidbody Component")]
     private Rigidbody2D rb;
-    private bool isFacingRight = true;
+    public bool isFacingRight = true;
 
     // Player Jump
     [Header("Player Jump Settings")]
@@ -24,10 +24,13 @@ public class PlayerController2D : MonoBehaviour
 
     public bool doubleJump;
 
+    public InventoryManager inventoryManager;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        inventoryManager = GameObject.Find("InventoryManager").GetComponent<InventoryManager>();
     }
 
     // Fixed Update is called a fixed or set number of frames. This works best with physics based movement
@@ -73,6 +76,16 @@ public class PlayerController2D : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Space) && !doubleJump && isGrounded)
         {
             rb.velocity = Vector2.up * jumpForce;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if(other.gameObject.CompareTag("Pickup"))
+        {
+            inventoryManager.AddToInventory();
+            Destroy(other.gameObject);
         }
     }
 }
