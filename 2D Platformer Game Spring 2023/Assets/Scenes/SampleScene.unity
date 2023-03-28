@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 126317610}
   - component: {fileID: 126317612}
   - component: {fileID: 126317613}
+  - component: {fileID: 126317614}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -353,6 +354,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 288349704}
   projectile: {fileID: 2247740109923190765, guid: 9ef885ae6da060e4e87bdd2af83394a8, type: 3}
+--- !u!114 &126317614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126317605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c774fbcfac83b4382064614327c528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  currentHealth: 0
 --- !u!1001 &223181983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -906,6 +921,7 @@ GameObject:
   - component: {fileID: 692399480}
   - component: {fileID: 692399479}
   - component: {fileID: 692399483}
+  - component: {fileID: 692399484}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -925,7 +941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7efc3fd561618441afd7557c27d12ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 3
 --- !u!61 &692399480
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1035,6 +1051,19 @@ MonoBehaviour:
   speed: 2
   rayDistance: 0.5
   groundDetection: {fileID: 630014300}
+--- !u!114 &692399484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692399478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88eb4f10bee566949b5ff5e71db9e57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &1021371076
 GameObject:
   m_ObjectHideFlags: 0
