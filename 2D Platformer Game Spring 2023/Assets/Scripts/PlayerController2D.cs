@@ -26,11 +26,15 @@ public class PlayerController2D : MonoBehaviour
 
     public InventoryManager inventoryManager;
 
+    [Header("Animations")]
+    private Animator playerAnim;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         inventoryManager = GameObject.Find("InventoryManager").GetComponent<InventoryManager>();
+        playerAnim = GetComponent<Animator>();
     }
 
     // Fixed Update is called a fixed or set number of frames. This works best with physics based movement
@@ -40,6 +44,15 @@ public class PlayerController2D : MonoBehaviour
 
         moveInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        
+        if(moveInput == 0)
+        {
+            playerAnim.SetBool("isWalking", false);
+        }
+        else 
+        {
+            playerAnim.SetBool("isWalking", true);
+        }
 
         // If the player is moving right but facing left flip the player right
         if(!isFacingRight && moveInput > 0)
