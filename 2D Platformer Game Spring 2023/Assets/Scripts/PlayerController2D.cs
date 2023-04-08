@@ -25,6 +25,7 @@ public class PlayerController2D : MonoBehaviour
     public bool doubleJump;
 
     public InventoryManager inventoryManager;
+    public Health health;
 
     [Header("Animations")]
     private Animator playerAnim;
@@ -35,6 +36,7 @@ public class PlayerController2D : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         inventoryManager = GameObject.Find("InventoryManager").GetComponent<InventoryManager>();
         playerAnim = GetComponent<Animator>();
+        health = GetComponent<Health>();
     }
 
     // Fixed Update is called a fixed or set number of frames. This works best with physics based movement
@@ -100,6 +102,7 @@ public class PlayerController2D : MonoBehaviour
         if(other.gameObject.CompareTag("Pickup"))
         {
             inventoryManager.AddToInventory();
+            health.AddHealth(1);
             Destroy(other.gameObject);
         }
     }
