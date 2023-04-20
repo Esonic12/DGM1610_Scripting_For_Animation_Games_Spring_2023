@@ -39,14 +39,14 @@ public class PlayerController : MonoBehaviour
         GameUI.instance.UpdateAmmoText(weapon.curAmmo, weapon.maxAmmo); */
     }
 
-   /* public void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         curHp -= damage;
 
         if(curHp <= 0)
             Die();
         
-    } */
+    }
 
     void Move()
     {
@@ -78,6 +78,27 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
+    }
+
+    void Die()
+    {
+        //GameManager.instance.LoseGame();
+        Debug.Log("Player has died! Game Over!");
+        Time.timeScale = 0;
+    }
+
+    public void GiveHealth(int amountToGive)
+    {
+        //curHp = Mathf.Clamp(curHp + amountToGive, 0, maxHp);
+        //GameUI.instance.UpdateHealthBar(CurHp, maxHp);
+        Debug.Log("Player has been healed!");
+    }
+
+    public void GiveAmmo(int amountToGive)
+    {
+        //weapon.curAmmo = Mathf.Clamp(weapon.curAmmo + amountToGive, 0, weapon.maxAmmo);
+        //GameUI.instance.UpdateAmmoText(weapon.curAmmo, weapon.maxAmmo);
+        Debug.Log("Player has collected ammo!");
     }
 
     // Update is called once per frame
