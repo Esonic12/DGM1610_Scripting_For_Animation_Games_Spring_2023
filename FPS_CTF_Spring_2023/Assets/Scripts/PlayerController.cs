@@ -106,5 +106,10 @@ public class PlayerController : MonoBehaviour
     {
        Move();
        CamLook(); 
+       
+       if(Input.GetKeyDown(KeyCode.Space))
+       {
+        Jump();
+       }
     }
 }
