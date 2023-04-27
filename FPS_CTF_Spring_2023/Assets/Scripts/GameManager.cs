@@ -54,10 +54,32 @@ public class GameManager : MonoBehaviour
     public void AddScore(int score)
     {
         curScore += score;
+        
+        GameUI.instance.UpdateScoreText(curScore);
+
+        if(curScore >= scoreToWin)
+        {
+            WinGame();
+        }
     }
 
     void WinGame()
     {
-        
+        Debug.Log("You've Won ");
+        //Time.timeScale = 0;
+
+        GameUI.instance.SetEndGameScreen(true, curScore);
+    }
+
+    public void LoseGame()
+    {
+        GameUI.instance.SetEndGameScreen(false, curScore);
+        Time.timeScale = 0.0f;
+        gamePaused = true;
+    }
+
+    public void PlaceFlag()
+    {
+        flagPlaced = true;
     }
 }
