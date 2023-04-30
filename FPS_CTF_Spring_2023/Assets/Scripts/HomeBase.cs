@@ -16,9 +16,9 @@ public class HomeBase : MonoBehaviour
         flagRend.enabled = false;
     }
 
-    void OntriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") && gm.hasFlag)
+        if(other.CompareTag("Player") && gm.hasFlag == true)
         {
             Debug.Log("Player has reached homebase!");
             flagRend.enabled = true;
